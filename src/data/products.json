@@ -1,10 +1,353 @@
 [
   {
-    "slug": "avakaya-mango-pickle",
-    "name": "(Avakaya) Mango Pickle",
+    "slug": "plain-ariselu",
+    "name": "Plain Ariselu",
+    "category": "sweets",
+    "image": "https://images.unsplash.com/photo-1605196560547-b2f7281b0855?w=800",
+    "description": "Traditional rice-jaggery Ariselu, plain version.",
+    "variants": [
+      { "weight": "1kg", "price": 350 }
+    ]
+  },
+  {
+    "slug": "nuvvula-ariselu",
+    "name": "Nuvvula Ariselu",
+    "category": "sweets",
+    "image": "https://images.unsplash.com/photo-1605196560547-b2f7281b0855?w=800",
+    "description": "Ariselu coated with toasted sesame (nuvvulu).",
+    "variants": [
+      { "weight": "1kg", "price": 400 }
+    ]
+  },
+  {
+    "slug": "ghee-plain-ariselu",
+    "name": "Ghee Plain Ariselu",
+    "category": "sweets",
+    "image": "https://images.unsplash.com/photo-1605196560547-b2f7281b0855?w=800",
+    "description": "Plain Ariselu prepared with pure ghee.",
+    "variants": [
+      { "weight": "1kg", "price": 600 }
+    ]
+  },
+  {
+    "slug": "ghee-nuvvula-ariselu",
+    "name": "Ghee Nuvvula Ariselu",
+    "category": "sweets",
+    "image": "https://images.unsplash.com/photo-1605196560547-b2f7281b0855?w=800",
+    "description": "Nuvvula Ariselu prepared with pure ghee.",
+    "variants": [
+      { "weight": "1kg", "price": 650 }
+    ]
+  },
+  {
+    "slug": "boondhi-laddu",
+    "name": "Boondhi Laddu",
+    "category": "sweets",
+    "image": "https://images.unsplash.com/photo-1605196560547-b2f7281b0855?w=800",
+    "description": "Soft boondhi laddu in sugar syrup.",
+    "variants": [
+      { "weight": "1kg", "price": 400 }
+    ]
+  },
+  {
+    "slug": "nuvvula-laddu-ghee",
+    "name": "Nuvvula Laddu (Ghee)",
+    "category": "sweets",
+    "image": "https://images.unsplash.com/photo-1605196560547-b2f7281b0855?w=800",
+    "description": "Sesame laddu prepared with pure ghee.",
+    "variants": [
+      { "weight": "1kg", "price": 800 }
+    ]
+  },
+  {
+    "slug": "nuvvula-laddu",
+    "name": "Nuvvula Laddu",
+    "category": "sweets",
+    "image": "https://images.unsplash.com/photo-1605196560547-b2f7281b0855?w=800",
+    "description": "Classic sesame seed laddu.",
+    "variants": [
+      { "weight": "1kg", "price": 600 }
+    ]
+  },
+  {
+    "slug": "sunundalu",
+    "name": "Sunundalu",
+    "category": "sweets",
+    "image": "https://images.unsplash.com/photo-1605196560547-b2f7281b0855?w=800",
+    "description": "Roasted urad dal laddu, a high-protein traditional treat.",
+    "variants": [
+      { "weight": "1kg", "price": 800 }
+    ]
+  },
+  {
+    "slug": "chenigi-undalu",
+    "name": "Chenigi Undalu",
+    "category": "sweets",
+    "image": "https://images.unsplash.com/photo-1605196560547-b2f7281b0855?w=800",
+    "description": "Roasted chana laddu with jaggery.",
+    "variants": [
+      { "weight": "1kg", "price": 500 }
+    ]
+  },
+  {
+    "slug": "bellam-gavvalu",
+    "name": "Bellam Gavvalu",
+    "category": "sweets",
+    "image": "https://images.unsplash.com/photo-1605196560547-b2f7281b0855?w=800",
+    "description": "Shell-shaped sweets coated in jaggery syrup.",
+    "variants": [
+      { "weight": "1kg", "price": 500 }
+    ]
+  },
+  {
+    "slug": "rava-laddu",
+    "name": "Rava Laddu",
+    "category": "sweets",
+    "image": "https://images.unsplash.com/photo-1605196560547-b2f7281b0855?w=800",
+    "description": "Semolina laddu with cashews and cardamom.",
+    "variants": [
+      { "weight": "1kg", "price": 400 }
+    ]
+  },
+  {
+    "slug": "dry-fruit-laddu",
+    "name": "Dry Fruit Laddu",
+    "category": "sweets",
+    "image": "https://images.unsplash.com/photo-1605196560547-b2f7281b0855?w=800",
+    "description": "Sugar-free laddu made with mixed dry fruits and dates.",
+    "variants": [
+      { "weight": "1kg", "price": 1250 }
+    ]
+  },
+  {
+    "slug": "raagi-laddu",
+    "name": "Raagi Laddu",
+    "category": "sweets",
+    "image": "https://images.unsplash.com/photo-1605196560547-b2f7281b0855?w=800",
+    "description": "Finger millet (raagi) laddu, wholesome and nutritious.",
+    "variants": [
+      { "weight": "1kg", "price": 500 }
+    ]
+  },
+  {
+    "slug": "boondhi-mittai",
+    "name": "Boondhi Mittai",
+    "category": "sweets",
+    "image": "https://images.unsplash.com/photo-1605196560547-b2f7281b0855?w=800",
+    "description": "Crunchy boondhi candy with jaggery.",
+    "variants": [
+      { "weight": "1kg", "price": 500 }
+    ]
+  },
+  {
+    "slug": "chalimidi",
+    "name": "Chalimidi",
+    "category": "sweets",
+    "image": "https://images.unsplash.com/photo-1605196560547-b2f7281b0855?w=800",
+    "description": "Soft rice-flour and jaggery sweet, a festival classic.",
+    "variants": [
+      { "weight": "1kg", "price": 400 }
+    ]
+  },
+  {
+    "slug": "flaxseed-laddu",
+    "name": "Flaxseed Laddu",
+    "category": "sweets",
+    "image": "https://images.unsplash.com/photo-1605196560547-b2f7281b0855?w=800",
+    "description": "Healthy flaxseed laddu with jaggery and dry fruits.",
+    "variants": [
+      { "weight": "1kg", "price": 600 }
+    ]
+  },
+
+  {
+    "slug": "kara-boondhi",
+    "name": "Kara Boondhi",
+    "category": "snacks",
+    "image": "https://images.unsplash.com/photo-1605196560547-b2f7281b0855?w=800",
+    "description": "Spicy crunchy gram-flour boondhi.",
+    "variants": [
+      { "weight": "1kg", "price": 400 }
+    ]
+  },
+  {
+    "slug": "udhipappu-murukulu",
+    "name": "Udhipappu Murukulu",
+    "category": "snacks",
+    "image": "https://images.unsplash.com/photo-1605196560547-b2f7281b0855?w=800",
+    "description": "Crispy murukulu made with urad dal flour.",
+    "variants": [
+      { "weight": "1kg", "price": 500 }
+    ]
+  },
+  {
+    "slug": "palli-murukulu",
+    "name": "Palli Murukulu",
+    "category": "snacks",
+    "image": "https://images.unsplash.com/photo-1605196560547-b2f7281b0855?w=800",
+    "description": "Peanut-flavoured crispy murukulu.",
+    "variants": [
+      { "weight": "1kg", "price": 500 }
+    ]
+  },
+  {
+    "slug": "raagi-murukulu",
+    "name": "Raagi Murukulu",
+    "category": "snacks",
+    "image": "https://images.unsplash.com/photo-1605196560547-b2f7281b0855?w=800",
+    "description": "Finger millet (raagi) murukulu, healthy and crunchy.",
+    "variants": [
+      { "weight": "1kg", "price": 500 }
+    ]
+  },
+  {
+    "slug": "putnala-pappu-murukulu",
+    "name": "Putnala Pappu Murukulu",
+    "category": "snacks",
+    "image": "https://images.unsplash.com/photo-1605196560547-b2f7281b0855?w=800",
+    "description": "Murukulu made with roasted chana dal flour.",
+    "variants": [
+      { "weight": "1kg", "price": 500 }
+    ]
+  },
+  {
+    "slug": "senaga-pindi-murukulu",
+    "name": "Senaga Pindi Murukulu",
+    "category": "snacks",
+    "image": "https://images.unsplash.com/photo-1605196560547-b2f7281b0855?w=800",
+    "description": "Murukulu made with besan (chickpea flour).",
+    "variants": [
+      { "weight": "1kg", "price": 500 }
+    ]
+  },
+  {
+    "slug": "karam-gavvalu",
+    "name": "Karam Gavvalu",
+    "category": "snacks",
+    "image": "https://images.unsplash.com/photo-1605196560547-b2f7281b0855?w=800",
+    "description": "Spicy shell-shaped savoury crisp.",
+    "variants": [
+      { "weight": "1kg", "price": 400 }
+    ]
+  },
+  {
+    "slug": "karapoosa",
+    "name": "Karapoosa",
+    "category": "snacks",
+    "image": "https://images.unsplash.com/photo-1605196560547-b2f7281b0855?w=800",
+    "description": "Spicy thin sev (karapoosa).",
+    "variants": [
+      { "weight": "1kg", "price": 400 }
+    ]
+  },
+  {
+    "slug": "vampodi",
+    "name": "Vampodi",
+    "category": "snacks",
+    "image": "https://images.unsplash.com/photo-1605196560547-b2f7281b0855?w=800",
+    "description": "Traditional Andhra savoury powder snack.",
+    "variants": [
+      { "weight": "1kg", "price": 400 }
+    ]
+  },
+  {
+    "slug": "vampodi-mixture",
+    "name": "Vampodi Mixture",
+    "category": "snacks",
+    "image": "https://images.unsplash.com/photo-1605196560547-b2f7281b0855?w=800",
+    "description": "Vampodi blended with mixture, peanuts and curry leaves.",
+    "variants": [
+      { "weight": "1kg", "price": 500 }
+    ]
+  },
+  {
+    "slug": "palli-pakodi",
+    "name": "Palli Pakodi",
+    "category": "snacks",
+    "image": "https://images.unsplash.com/photo-1605196560547-b2f7281b0855?w=800",
+    "description": "Crispy peanut pakodi, perfect tea-time snack.",
+    "variants": [
+      { "weight": "1kg", "price": 500 }
+    ]
+  },
+
+  {
+    "slug": "chicken-pickle-boneless",
+    "name": "Chicken Pickle (Boneless)",
+    "category": "non-veg-pickles",
+    "image": "https://images.unsplash.com/photo-1605196560547-b2f7281b0855?w=800",
+    "description": "Boneless chicken pickle, slow-cooked in spices and oil.",
+    "variants": [
+      { "weight": "1kg", "price": 1000 }
+    ]
+  },
+  {
+    "slug": "mutton-pickle-boneless",
+    "name": "Mutton Pickle (Boneless)",
+    "category": "non-veg-pickles",
+    "image": "https://images.unsplash.com/photo-1605196560547-b2f7281b0855?w=800",
+    "description": "Boneless mutton pickle, rich and aromatic.",
+    "variants": [
+      { "weight": "1kg", "price": 2200 }
+    ]
+  },
+  {
+    "slug": "prawns-pickle",
+    "name": "Prawns Pickle",
+    "category": "non-veg-pickles",
+    "image": "https://images.unsplash.com/photo-1605196560547-b2f7281b0855?w=800",
+    "description": "Coastal-style prawns pickle in spiced oil.",
+    "variants": [
+      { "weight": "1kg", "price": 2000 }
+    ]
+  },
+  {
+    "slug": "fish-pickle",
+    "name": "Fish Pickle",
+    "category": "non-veg-pickles",
+    "image": "https://images.unsplash.com/photo-1605196560547-b2f7281b0855?w=800",
+    "description": "Boneless fish pickle, marinated in traditional spices.",
+    "variants": [
+      { "weight": "1kg", "price": 1800 }
+    ]
+  },
+  {
+    "slug": "gongura-chicken-pickle",
+    "name": "Gongura Chicken Pickle",
+    "category": "non-veg-pickles",
+    "image": "https://images.unsplash.com/photo-1605196560547-b2f7281b0855?w=800",
+    "description": "Chicken pickle blended with tangy gongura leaves.",
+    "variants": [
+      { "weight": "1kg", "price": 1200 }
+    ]
+  },
+  {
+    "slug": "gongura-mutton-pickle",
+    "name": "Gongura Mutton Pickle",
+    "category": "non-veg-pickles",
+    "image": "https://images.unsplash.com/photo-1605196560547-b2f7281b0855?w=800",
+    "description": "Mutton pickle with tangy gongura leaves.",
+    "variants": [
+      { "weight": "1kg", "price": 2500 }
+    ]
+  },
+  {
+    "slug": "gongura-prawns-pickle",
+    "name": "Gongura Prawns Pickle",
+    "category": "non-veg-pickles",
+    "image": "https://images.unsplash.com/photo-1605196560547-b2f7281b0855?w=800",
+    "description": "Prawns pickle with tangy gongura leaves.",
+    "variants": [
+      { "weight": "1kg", "price": 2200 }
+    ]
+  },
+
+  {
+    "slug": "tomato-pickle",
+    "name": "Tomato Pickle",
     "category": "veg-pickles",
     "image": "https://images.unsplash.com/photo-1605196560547-b2f7281b0855?w=800",
-    "description": "Classic Andhra raw-mango pickle with mustard, fenugreek and chilli.",
+    "description": "Tangy slow-cooked tomato pickle tempered with mustard, garlic and red chilli.",
     "variants": [
       { "weight": "250g", "price": 150 },
       { "weight": "500g", "price": 275 },
@@ -12,15 +355,53 @@
     ]
   },
   {
-    "slug": "tomato-pickle",
-    "name": "Tomato Pickle",
+    "slug": "gongura-pickle",
+    "name": "Gongura Pickle",
     "category": "veg-pickles",
     "image": "https://images.unsplash.com/photo-1605196560547-b2f7281b0855?w=800",
-    "description": "Tomato pickle with mustard, fenugreek and chilli.",
+    "description": "Tangy Andhra-style gongura (sorrel leaf) pickle.",
     "variants": [
-      { "weight": "250g", "price": 150 },
-      { "weight": "500g", "price": 275 },
+      { "weight": "1kg", "price": 500 }
+    ]
+  },
+  {
+    "slug": "avakaya-pickle",
+    "name": "Avakaya Pickle",
+    "category": "veg-pickles",
+    "image": "https://images.unsplash.com/photo-1605196560547-b2f7281b0855?w=800",
+    "description": "Classic Andhra raw-mango pickle with mustard, fenugreek and chilli.",
+    "variants": [
       { "weight": "1kg",  "price": 500 }
+    ]
+  },
+  {
+    "slug": "amla-pickle",
+    "name": "Amla Pickle",
+    "category": "veg-pickles",
+    "image": "https://images.unsplash.com/photo-1605196560547-b2f7281b0855?w=800",
+    "description": "Indian gooseberry pickle, packed with vitamin C.",
+    "variants": [
+      { "weight": "1kg", "price": 500 }
+    ]
+  },
+  {
+    "slug": "allam-pickle",
+    "name": "Allam Pickle",
+    "category": "veg-pickles",
+    "image": "https://images.unsplash.com/photo-1605196560547-b2f7281b0855?w=800",
+    "description": "Fresh ginger pickle, hot and tangy.",
+    "variants": [
+      { "weight": "1kg", "price": 600 }
+    ]
+  },
+  {
+    "slug": "lemon-pickle",
+    "name": "Lemon Pickle",
+    "category": "veg-pickles",
+    "image": "https://images.unsplash.com/photo-1605196560547-b2f7281b0855?w=800",
+    "description": "Classic lemon pickle with red chilli and mustard.",
+    "variants": [
+      { "weight": "1kg", "price": 500 }
     ]
   },
   {
@@ -29,11 +410,141 @@
     "category": "veg-pickles",
     "inStock": false,
     "image": "https://images.unsplash.com/photo-1605196560547-b2f7281b0855?w=800",
-    "description": "Kakarkaya pickle with mustard, fenugreek and chilli.",
+    "description": "Crispy bitter-gourd (kakarkaya) pickle balanced with jaggery, tamarind and Andhra spices.",
     "variants": [
-      { "weight": "250g", "price": 150 },
-      { "weight": "500g", "price": 275 },
       { "weight": "1kg",  "price": 500 }
+    ]
+  },
+  {
+    "slug": "munakaya-pickle",
+    "name": "Munakaya Pickle",
+    "category": "veg-pickles",
+    "image": "https://images.unsplash.com/photo-1605196560547-b2f7281b0855?w=800",
+    "description": "Drumstick (munakaya) pickle, a traditional Andhra favourite.",
+    "variants": [
+      { "weight": "1kg", "price": 500 }
+    ]
+  },
+  {
+    "slug": "pulihora-mix",
+    "name": "Pulihora Mix",
+    "category": "veg-pickles",
+    "image": "https://images.unsplash.com/photo-1605196560547-b2f7281b0855?w=800",
+    "description": "Ready-to-use tamarind rice (pulihora) paste.",
+    "variants": [
+      { "weight": "1kg", "price": 600 }
+    ]
+  },
+  {
+    "slug": "mixed-veg-pickle",
+    "name": "Mixed Veg Pickle",
+    "category": "veg-pickles",
+    "image": "https://images.unsplash.com/photo-1605196560547-b2f7281b0855?w=800",
+    "description": "Assorted vegetables pickled in traditional Andhra spices.",
+    "variants": [
+      { "weight": "1kg", "price": 600 }
+    ]
+  },
+
+  {
+    "slug": "palli-podi",
+    "name": "Palli Podi",
+    "category": "podulu",
+    "image": "https://images.unsplash.com/photo-1605196560547-b2f7281b0855?w=800",
+    "description": "Roasted peanut podi, perfect with hot rice and ghee.",
+    "variants": [
+      { "weight": "250g", "price": 150 }
+    ]
+  },
+  {
+    "slug": "pappula-podi",
+    "name": "Pappula Podi",
+    "category": "podulu",
+    "image": "https://images.unsplash.com/photo-1605196560547-b2f7281b0855?w=800",
+    "description": "Roasted chana dal podi.",
+    "variants": [
+      { "weight": "250g", "price": 150 }
+    ]
+  },
+  {
+    "slug": "karvepaku-podi",
+    "name": "Karvepaku Podi",
+    "category": "podulu",
+    "image": "https://images.unsplash.com/photo-1605196560547-b2f7281b0855?w=800",
+    "description": "Curry-leaf podi, aromatic and digestive.",
+    "variants": [
+      { "weight": "250g", "price": 150 }
+    ]
+  },
+  {
+    "slug": "munagaku-podi",
+    "name": "Munagaku Podi",
+    "category": "podulu",
+    "image": "https://images.unsplash.com/photo-1605196560547-b2f7281b0855?w=800",
+    "description": "Drumstick-leaf (moringa) podi, packed with nutrients.",
+    "variants": [
+      { "weight": "250g", "price": 150 }
+    ]
+  },
+  {
+    "slug": "pudhina-podi",
+    "name": "Pudhina Podi",
+    "category": "podulu",
+    "image": "https://images.unsplash.com/photo-1605196560547-b2f7281b0855?w=800",
+    "description": "Mint-leaf podi, refreshing and aromatic.",
+    "variants": [
+      { "weight": "250g", "price": 150 }
+    ]
+  },
+  {
+    "slug": "nuvvula-podi",
+    "name": "Nuvvula Podi",
+    "category": "podulu",
+    "image": "https://images.unsplash.com/photo-1605196560547-b2f7281b0855?w=800",
+    "description": "Toasted sesame podi.",
+    "variants": [
+      { "weight": "250g", "price": 150 }
+    ]
+  },
+  {
+    "slug": "velluli-karam-podi",
+    "name": "Velluli Karam Podi",
+    "category": "podulu",
+    "image": "https://images.unsplash.com/photo-1605196560547-b2f7281b0855?w=800",
+    "description": "Garlic-chilli podi, spicy and pungent.",
+    "variants": [
+      { "weight": "250g", "price": 150 }
+    ]
+  },
+
+  {
+    "slug": "saggubiyyam-vadiyalu",
+    "name": "Saggubiyyam Vadiyalu",
+    "category": "vadiyalu",
+    "image": "https://images.unsplash.com/photo-1605196560547-b2f7281b0855?w=800",
+    "description": "Sun-dried sago vadiyalu, deep-fry to enjoy.",
+    "variants": [
+      { "weight": "500g", "price": 500 }
+    ]
+  },
+  {
+    "slug": "biyyam-vadiyalu",
+    "name": "Biyyam Vadiyalu",
+    "category": "vadiyalu",
+    "image": "https://images.unsplash.com/photo-1605196560547-b2f7281b0855?w=800",
+    "description": "Sun-dried rice vadiyalu.",
+    "variants": [
+      { "weight": "500g", "price": 500 }
+    ]
+  },
+  {
+    "slug": "raagi-vadiyalu",
+    "name": "Raagi Vadiyalu",
+    "category": "vadiyalu",
+    "image": "https://images.unsplash.com/photo-1605196560547-b2f7281b0855?w=800",
+    "description": "Sun-dried finger millet vadiyalu.",
+    "variants": [
+      { "weight": "500g", "price": 500 }
     ]
   }
 ]
