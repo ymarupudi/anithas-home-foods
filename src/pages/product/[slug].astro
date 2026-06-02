@@ -8,6 +8,7 @@ export function getStaticPaths() {
 }
 
 const { product } = Astro.props;
+const base = import.meta.env.BASE_URL;
 ---
 <Base title={product.name} description={product.description}>
   <section class="max-w-5xl mx-auto px-4 py-10 grid md:grid-cols-2 gap-8">
@@ -31,27 +32,44 @@ const { product } = Astro.props;
         </div>
       </div>
 
-      <a id="order-btn"
-        href="#"
-        target="_blank"
-        rel="noopener"
-        class="mt-6 inline-block bg-green-600 text-white px-6 py-3 rounded-full font-medium hover:bg-green-700 transition">
-        Order on WhatsApp
-      </a>
+      <div class="mt-4 flex items-center gap-3">
+        <label class="text-sm font-semibold text-stone-700">Qty:</label>
+        <input id="qty-input" type="number" min="1" value="1"
+               class="w-20 px-3 py-2 border border-stone-300 rounded" />
+      </div>
 
-      <p class="text-xs text-stone-500 mt-3">Opens WhatsApp with your order details pre-filled.</p>
+      <div class="mt-6 flex flex-wrap gap-3">
+        <button id="add-btn" type="button"
+          class="bg-brand text-white px-6 py-3 rounded-full font-medium hover:bg-brand-dark transition">
+          Add to Cart
+        </button>
+        <a id="order-btn"
+          href="#"
+          target="_blank"
+          rel="noopener"
+          class="bg-green-600 text-white px-6 py-3 rounded-full font-medium hover:bg-green-700 transition">
+          Buy Now on WhatsApp
+        </a>
+      </div>
+
+      <p id="add-msg" class="text-sm text-green-700 mt-3 hidden">Added to cart ✓ &nbsp;<a href={`${base}cart/`} class="underline">View cart</a></p>
+      <p class="text-xs text-stone-500 mt-3">"Buy Now" sends just this item. Use the cart to combine multiple products.</p>
     </div>
   </section>
 
-  <script define:vars={{ productName: product.name, whatsapp: site.whatsapp }}>
+  <script define:vars={{ productSlug: product.slug, productName: product.name, productImage: product.image, whatsapp: site.whatsapp }}>
     const buttons = document.querySelectorAll('.variant-btn');
     const orderBtn = document.getElementById('order-btn');
+    const addBtn = document.getElementById('add-btn');
+    const qtyInput = document.getElementById('qty-input');
+    const addMsg = document.getElementById('add-msg');
     let selected = buttons[0];
 
     const buildLink = (btn) => {
       const weight = btn.dataset.weight;
       const price = btn.dataset.price;
-      const msg = `Hi, I'd like to order:\n\n${productName} (${weight}) — ₹${price}\n\nPlease confirm availability and delivery.`;
+      const qty = Math.max(1, parseInt(qtyInput.value || '1', 10));
+      const msg = `Hi, I'd like to order:\n\n${productName} (${weight}) x ${qty} — ₹${price * qty}\n\nPlease confirm availability and delivery.`;
       return `https://wa.me/${whatsapp}?text=${encodeURIComponent(msg)}`;
     };
 
@@ -63,6 +81,21 @@ const { product } = Astro.props;
     };
 
     buttons.forEach((b) => b.addEventListener('click', () => update(b)));
+    qtyInput.addEventListener('input', () => update(selected));
     update(selected);
+
+    addBtn.addEventListener('click', () => {
+      const qty = Math.max(1, parseInt(qtyInput.value || '1', 10));
+      window.Cart.add({
+        slug: productSlug,
+        name: productName,
+        image: productImage,
+        weight: selected.dataset.weight,
+        price: Number(selected.dataset.price),
+        qty,
+      });
+      addMsg.classList.remove('hidden');
+      setTimeout(() => addMsg.classList.add('hidden'), 4000);
+    });
   </script>
 </Base>
