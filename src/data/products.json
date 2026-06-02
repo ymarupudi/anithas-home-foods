@@ -408,7 +408,6 @@
     "slug": "kakarkaya-pickle",
     "name": "Kakarkaya Pickle",
     "category": "veg-pickles",
-    "inStock": false,
     "image": "https://images.unsplash.com/photo-1605196560547-b2f7281b0855?w=800",
     "description": "Crispy bitter-gourd (kakarkaya) pickle balanced with jaggery, tamarind and Andhra spices.",
     "variants": [
@@ -521,6 +520,7 @@
     "slug": "saggubiyyam-vadiyalu",
     "name": "Saggubiyyam Vadiyalu",
     "category": "vadiyalu",
+    "inStock": false,
     "image": "https://images.unsplash.com/photo-1605196560547-b2f7281b0855?w=800",
     "description": "Sun-dried sago vadiyalu, deep-fry to enjoy.",
     "variants": [
@@ -531,6 +531,7 @@
     "slug": "biyyam-vadiyalu",
     "name": "Biyyam Vadiyalu",
     "category": "vadiyalu",
+    "inStock": false,
     "image": "https://images.unsplash.com/photo-1605196560547-b2f7281b0855?w=800",
     "description": "Sun-dried rice vadiyalu.",
     "variants": [
@@ -541,6 +542,7 @@
     "slug": "raagi-vadiyalu",
     "name": "Raagi Vadiyalu",
     "category": "vadiyalu",
+    "inStock": false,
     "image": "https://images.unsplash.com/photo-1605196560547-b2f7281b0855?w=800",
     "description": "Sun-dried finger millet vadiyalu.",
     "variants": [
