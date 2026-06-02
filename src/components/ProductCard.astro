@@ -1,10 +1,18 @@
 ---
 const { product } = Astro.props;
 const base = import.meta.env.BASE_URL;
-const minPrice = Math.min(...product.variants.map((v) => v.price));
+const availableVariants = product.variants.filter((v) => v.inStock !== false);
+const outOfStock = product.inStock === false || availableVariants.length === 0;
+const minPrice = (outOfStock ? product.variants : availableVariants)
+  .reduce((m, v) => Math.min(m, v.price), Infinity);
 ---
-<a href={`${base}product/${product.slug}/`} class="group block bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition">
-  <div class="aspect-square overflow-hidden bg-stone-100">
+<a href={`${base}product/${product.slug}/`} class="group block bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition relative">
+  {outOfStock && (
+    <span class="absolute top-2 left-2 z-10 bg-stone-800/85 text-white text-[10px] font-bold uppercase tracking-wide px-2 py-1 rounded">
+      Out of Stock
+    </span>
+  )}
+  <div class={`aspect-square overflow-hidden bg-stone-100 ${outOfStock ? 'opacity-60' : ''}`}>
     <img src={product.image} alt={product.name} loading="lazy"
          class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
   </div>

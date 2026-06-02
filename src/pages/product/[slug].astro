@@ -9,10 +9,22 @@ export function getStaticPaths() {
 
 const { product } = Astro.props;
 const base = import.meta.env.BASE_URL;
+const productOutOfStock = product.inStock === false;
+const allVariantsOut = product.variants.every((v) => v.inStock === false);
+const outOfStock = productOutOfStock || allVariantsOut;
+const firstAvailableIdx = product.variants.findIndex((v) => v.inStock !== false);
 ---
 <Base title={product.name} description={product.description}>
   <section class="max-w-5xl mx-auto px-4 py-10 grid md:grid-cols-2 gap-8">
-    <img src={product.image} alt={product.name} class="w-full rounded-lg shadow-sm" />
+    <div class="relative">
+      {outOfStock && (
+        <span class="absolute top-3 left-3 z-10 bg-stone-800/85 text-white text-xs font-bold uppercase tracking-wide px-3 py-1.5 rounded">
+          Out of Stock
+        </span>
+      )}
+      <img src={product.image} alt={product.name}
+           class={`w-full rounded-lg shadow-sm ${outOfStock ? 'opacity-60' : ''}`} />
+    </div>
 
     <div>
       <h1 class="text-3xl font-display font-bold">{product.name}</h1>
@@ -21,44 +33,64 @@ const base = import.meta.env.BASE_URL;
       <div class="mt-6">
         <label class="text-sm font-semibold text-stone-700">Select size:</label>
         <div id="variants" class="flex flex-wrap gap-2 mt-2">
-          {product.variants.map((v, i) => (
-            <button type="button"
-              data-weight={v.weight}
-              data-price={v.price}
-              class={`variant-btn px-4 py-2 rounded border ${i === 0 ? 'border-brand bg-brand-light' : 'border-stone-300'}`}>
-              {v.weight} — ₹{v.price}
-            </button>
-          ))}
+          {product.variants.map((v, i) => {
+            const variantOut = productOutOfStock || v.inStock === false;
+            const isDefault = !variantOut && i === firstAvailableIdx;
+            return (
+              <button type="button"
+                data-weight={v.weight}
+                data-price={v.price}
+                data-out={variantOut ? '1' : '0'}
+                disabled={variantOut}
+                class={`variant-btn px-4 py-2 rounded border ${
+                  variantOut
+                    ? 'border-stone-200 bg-stone-100 text-stone-400 line-through cursor-not-allowed'
+                    : (isDefault ? 'border-brand bg-brand-light' : 'border-stone-300')
+                }`}>
+                {v.weight} — ₹{v.price}{variantOut ? ' (out of stock)' : ''}
+              </button>
+            );
+          })}
         </div>
       </div>
 
-      <div class="mt-4 flex items-center gap-3">
-        <label class="text-sm font-semibold text-stone-700">Qty:</label>
-        <input id="qty-input" type="number" min="1" value="1"
-               class="w-20 px-3 py-2 border border-stone-300 rounded" />
-      </div>
+      {outOfStock ? (
+        <div class="mt-6 p-4 bg-stone-100 border border-stone-200 rounded">
+          <p class="font-semibold text-stone-700">Currently out of stock</p>
+          <p class="text-sm text-stone-500 mt-1">Please check back soon or contact us for availability.</p>
+        </div>
+      ) : (
+        <>
+          <div class="mt-4 flex items-center gap-3">
+            <label class="text-sm font-semibold text-stone-700">Qty:</label>
+            <input id="qty-input" type="number" min="1" value="1"
+                   class="w-20 px-3 py-2 border border-stone-300 rounded" />
+          </div>
 
-      <div class="mt-6 flex flex-wrap gap-3">
-        <button id="add-btn" type="button"
-          class="bg-brand text-white px-6 py-3 rounded-full font-medium hover:bg-brand-dark transition">
-          Add to Cart
-        </button>
-        <a id="order-btn"
-          href="#"
-          target="_blank"
-          rel="noopener"
-          class="bg-green-600 text-white px-6 py-3 rounded-full font-medium hover:bg-green-700 transition">
-          Buy Now on WhatsApp
-        </a>
-      </div>
+          <div class="mt-6 flex flex-wrap gap-3">
+            <button id="add-btn" type="button"
+              class="bg-brand text-white px-6 py-3 rounded-full font-medium hover:bg-brand-dark transition">
+              Add to Cart
+            </button>
+            <a id="order-btn"
+              href="#"
+              target="_blank"
+              rel="noopener"
+              class="bg-green-600 text-white px-6 py-3 rounded-full font-medium hover:bg-green-700 transition">
+              Buy Now on WhatsApp
+            </a>
+          </div>
 
-      <p id="add-msg" class="text-sm text-green-700 mt-3 hidden">Added to cart ✓ &nbsp;<a href={`${base}cart/`} class="underline">View cart</a></p>
-      <p class="text-xs text-stone-500 mt-3">"Buy Now" sends just this item. Use the cart to combine multiple products.</p>
+          <p id="add-msg" class="text-sm text-green-700 mt-3 hidden">Added to cart ✓ &nbsp;<a href={`${base}cart/`} class="underline">View cart</a></p>
+          <p class="text-xs text-stone-500 mt-3">"Buy Now" sends just this item. Use the cart to combine multiple products.</p>
+        </>
+      )}
     </div>
   </section>
 
+  {!outOfStock && (
   <script define:vars={{ productSlug: product.slug, productName: product.name, productImage: product.image, whatsapp: site.whatsapp }}>
-    const buttons = document.querySelectorAll('.variant-btn');
+    const buttons = document.querySelectorAll('.variant-btn:not([disabled])');
     const orderBtn = document.getElementById('order-btn');
     const addBtn = document.getElementById('add-btn');
     const qtyInput = document.getElementById('qty-input');
@@ -98,4 +130,5 @@ const base = import.meta.env.BASE_URL;
       setTimeout(() => addMsg.classList.add('hidden'), 4000);
     });
   </script>
+  )}
 </Base>

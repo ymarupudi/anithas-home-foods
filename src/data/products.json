@@ -22,5 +22,18 @@
       { "weight": "500g", "price": 275 },
       { "weight": "1kg",  "price": 500 }
     ]
+  },
+  {
+    "slug": "kakarkaya-pickle",
+    "name": "Kakarkaya Pickle",
+    "category": "veg-pickles",
+    "inStock": false,
+    "image": "https://images.unsplash.com/photo-1605196560547-b2f7281b0855?w=800",
+    "description": "Kakarkaya pickle with mustard, fenugreek and chilli.",
+    "variants": [
+      { "weight": "250g", "price": 150 },
+      { "weight": "500g", "price": 275 },
+      { "weight": "1kg",  "price": 500 }
+    ]
   }
 ]
