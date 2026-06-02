@@ -1,0 +1,8 @@
+[
+  { "slug": "veg-pickles",     "name": "Veg Pickles",     "emoji": "🥭" },
+  { "slug": "non-veg-pickles", "name": "Non-Veg Pickles", "emoji": "🍗" },
+  { "slug": "sweets",          "name": "Sweets",          "emoji": "🍬" },
+  { "slug": "snacks",          "name": "Snacks",          "emoji": "🥨" },
+  { "slug": "podulu",          "name": "Podulu",          "emoji": "🌶️" },
+  { "slug": "vadiyalu",        "name": "Vadiyalu",        "emoji": "🌾" }
+]

@@ -1,0 +1,24 @@
+---
+import site from '../data/site.json';
+import categories from '../data/categories.json';
+const base = import.meta.env.BASE_URL;
+---
+<header class="bg-white shadow-sm sticky top-0 z-50">
+  <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+    <a href={base} class="font-display text-2xl text-brand font-bold">{site.name}</a>
+    <nav class="hidden md:flex gap-6 text-sm font-medium">
+      <a href={base} class="hover:text-brand">Home</a>
+      <a href={`${base}shop/`} class="hover:text-brand">Shop</a>
+      <a href={`${base}about/`} class="hover:text-brand">About</a>
+      <a href={`${base}contact/`} class="hover:text-brand">Contact</a>
+    </nav>
+    <a href={`tel:${site.phone}`} class="text-sm text-brand font-semibold hidden sm:inline">☎ {site.phone}</a>
+  </div>
+  <div class="bg-brand text-white text-xs">
+    <div class="max-w-6xl mx-auto px-4 py-2 flex gap-4 overflow-x-auto">
+      {categories.map((c) => (
+        <a href={`${base}category/${c.slug}/`} class="whitespace-nowrap hover:underline">{c.emoji} {c.name}</a>
+      ))}
+    </div>
+  </div>
+</header>

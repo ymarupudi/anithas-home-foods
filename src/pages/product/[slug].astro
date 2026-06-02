@@ -1,0 +1,68 @@
+---
+import Base from '../../layouts/Base.astro';
+import products from '../../data/products.json';
+import site from '../../data/site.json';
+
+export function getStaticPaths() {
+  return products.map((p) => ({ params: { slug: p.slug }, props: { product: p } }));
+}
+
+const { product } = Astro.props;
+---
+<Base title={product.name} description={product.description}>
+  <section class="max-w-5xl mx-auto px-4 py-10 grid md:grid-cols-2 gap-8">
+    <img src={product.image} alt={product.name} class="w-full rounded-lg shadow-sm" />
+
+    <div>
+      <h1 class="text-3xl font-display font-bold">{product.name}</h1>
+      <p class="text-stone-600 mt-4">{product.description}</p>
+
+      <div class="mt-6">
+        <label class="text-sm font-semibold text-stone-700">Select size:</label>
+        <div id="variants" class="flex flex-wrap gap-2 mt-2">
+          {product.variants.map((v, i) => (
+            <button type="button"
+              data-weight={v.weight}
+              data-price={v.price}
+              class={`variant-btn px-4 py-2 rounded border ${i === 0 ? 'border-brand bg-brand-light' : 'border-stone-300'}`}>
+              {v.weight} — ₹{v.price}
+            </button>
+          ))}
+        </div>
+      </div>
+
+      <a id="order-btn"
+        href="#"
+        target="_blank"
+        rel="noopener"
+        class="mt-6 inline-block bg-green-600 text-white px-6 py-3 rounded-full font-medium hover:bg-green-700 transition">
+        Order on WhatsApp
+      </a>
+
+      <p class="text-xs text-stone-500 mt-3">Opens WhatsApp with your order details pre-filled.</p>
+    </div>
+  </section>
+
+  <script define:vars={{ productName: product.name, whatsapp: site.whatsapp }}>
+    const buttons = document.querySelectorAll('.variant-btn');
+    const orderBtn = document.getElementById('order-btn');
+    let selected = buttons[0];
+
+    const buildLink = (btn) => {
+      const weight = btn.dataset.weight;
+      const price = btn.dataset.price;
+      const msg = `Hi, I'd like to order:\n\n${productName} (${weight}) — ₹${price}\n\nPlease confirm availability and delivery.`;
+      return `https://wa.me/${whatsapp}?text=${encodeURIComponent(msg)}`;
+    };
+
+    const update = (btn) => {
+      buttons.forEach((b) => b.classList.remove('border-brand', 'bg-brand-light'));
+      btn.classList.add('border-brand', 'bg-brand-light');
+      selected = btn;
+      orderBtn.href = buildLink(btn);
+    };
+
+    buttons.forEach((b) => b.addEventListener('click', () => update(b)));
+    update(selected);
+  </script>
+</Base>

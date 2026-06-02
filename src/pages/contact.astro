@@ -1,0 +1,19 @@
+---
+import Base from '../layouts/Base.astro';
+import site from '../data/site.json';
+const waLink = `https://wa.me/${site.whatsapp}?text=${encodeURIComponent('Hello, I have a question about your products.')}`;
+---
+<Base title="Contact Us">
+  <section class="max-w-3xl mx-auto px-4 py-12">
+    <h1 class="text-3xl font-display font-bold mb-6">Contact Us</h1>
+    <div class="space-y-3 text-stone-700">
+      <p><strong>Address:</strong> {site.address}</p>
+      <p><strong>Phone:</strong> <a class="text-brand" href={`tel:${site.phone}`}>{site.phone}</a></p>
+      <p><strong>Email:</strong> <a class="text-brand" href={`mailto:${site.email}`}>{site.email}</a></p>
+    </div>
+    <a href={waLink} target="_blank" rel="noopener"
+       class="inline-block mt-6 bg-green-600 text-white px-6 py-3 rounded-full font-medium hover:bg-green-700 transition">
+      Chat on WhatsApp
+    </a>
+  </section>
+</Base>

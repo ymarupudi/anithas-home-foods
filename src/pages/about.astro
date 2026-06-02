@@ -1,0 +1,12 @@
+---
+import Base from '../layouts/Base.astro';
+import site from '../data/site.json';
+---
+<Base title="About Us">
+  <section class="max-w-3xl mx-auto px-4 py-12">
+    <h1 class="text-3xl font-display font-bold mb-4">About {site.name}</h1>
+    <p class="text-stone-700 leading-relaxed">
+      At {site.name}, every product is handcrafted.
+    </p>
+  </section>
+</Base>

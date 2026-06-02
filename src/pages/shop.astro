@@ -1,0 +1,13 @@
+---
+import Base from '../layouts/Base.astro';
+import ProductCard from '../components/ProductCard.astro';
+import products from '../data/products.json';
+---
+<Base title="Shop">
+  <section class="max-w-6xl mx-auto px-4 py-10">
+    <h1 class="text-3xl font-display font-bold mb-6">All Products</h1>
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+      {products.map((p) => <ProductCard product={p} />)}
+    </div>
+  </section>
+</Base>

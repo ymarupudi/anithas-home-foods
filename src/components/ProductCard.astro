@@ -1,0 +1,15 @@
+---
+const { product } = Astro.props;
+const base = import.meta.env.BASE_URL;
+const minPrice = Math.min(...product.variants.map((v) => v.price));
+---
+<a href={`${base}product/${product.slug}/`} class="group block bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition">
+  <div class="aspect-square overflow-hidden bg-stone-100">
+    <img src={product.image} alt={product.name} loading="lazy"
+         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+  </div>
+  <div class="p-3">
+    <h3 class="font-semibold text-stone-800 group-hover:text-brand line-clamp-2">{product.name}</h3>
+    <p class="text-sm text-stone-500 mt-1">From ₹{minPrice}</p>
+  </div>
+</a>
