@@ -30,6 +30,15 @@ const firstAvailableIdx = product.variants.findIndex((v) => v.inStock !== false)
       <h1 class="text-3xl font-display font-bold">{product.name}</h1>
       <p class="text-stone-600 mt-4">{product.description}</p>
 
+      <div class="mt-4">
+        <button id="share-btn" type="button"
+          class="text-sm text-stone-600 hover:text-brand inline-flex items-center gap-1.5 underline-offset-4 hover:underline">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+          <span id="share-btn-label">Share this product</span>
+        </button>
+        <span id="share-msg" class="ml-2 text-sm text-green-700 hidden">Link copied ✓</span>
+      </div>
+
       <div class="mt-6">
         <label class="text-sm font-semibold text-stone-700">Select size:</label>
         <div id="variants" class="flex flex-wrap gap-2 mt-2">
@@ -131,4 +140,31 @@ const firstAvailableIdx = product.variants.findIndex((v) => v.inStock !== false)
     });
   </script>
   )}
+
+  <script define:vars={{ productName: product.name, productDescription: product.description }}>
+    const shareBtn = document.getElementById('share-btn');
+    const shareMsg = document.getElementById('share-msg');
+    const shareLabel = document.getElementById('share-btn-label');
+    const url = window.location.href;
+
+    const flash = (text) => {
+      shareMsg.textContent = text;
+      shareMsg.classList.remove('hidden');
+      setTimeout(() => shareMsg.classList.add('hidden'), 2500);
+    };
+
+    shareBtn.addEventListener('click', async () => {
+      const shareData = { title: productName, text: productDescription, url };
+      if (navigator.share) {
+        try { await navigator.share(shareData); return; }
+        catch (err) { if (err.name === 'AbortError') return; }
+      }
+      try {
+        await navigator.clipboard.writeText(url);
+        flash('Link copied ✓');
+      } catch {
+        window.prompt('Copy this link:', url);
+      }
+    });
+  </script>
 </Base>

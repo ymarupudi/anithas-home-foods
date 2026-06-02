@@ -8,6 +8,14 @@ const waLink = `https://wa.me/${site.whatsapp}?text=${encodeURIComponent('Hello,
     <h1 class="text-3xl font-display font-bold mb-6">Contact Us</h1>
     <div class="space-y-3 text-stone-700">
       <p><strong>Address:</strong> {site.address}</p>
+      <p>
+        <a href={site.maps} target="_blank" rel="noopener"
+           class="inline-flex items-center gap-1.5 text-brand hover:underline"
+           aria-label="Open location in Google Maps">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          View on Google Maps
+        </a>
+      </p>
       <p><strong>Phone:</strong> <a class="text-brand" href={`tel:${site.phone}`}>{site.phone}</a></p>
       <p><strong>Email:</strong> <a class="text-brand" href={`mailto:${site.email}`}>{site.email}</a></p>
     </div>
