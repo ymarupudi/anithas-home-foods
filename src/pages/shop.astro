@@ -1,13 +1,18 @@
 ---
 import Base from '../layouts/Base.astro';
 import ProductCard from '../components/ProductCard.astro';
+import ProductSearch from '../components/ProductSearch.astro';
 import products from '../data/products.json';
 ---
 <Base title="Shop">
   <section class="max-w-6xl mx-auto px-4 py-10">
-    <h1 class="text-3xl font-display font-bold mb-6">All Products</h1>
-    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+    <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-6">
+      <h1 class="text-3xl font-display font-bold">All Products</h1>
+      <ProductSearch placeholder="Search all products..." />
+    </div>
+    <div data-product-grid class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
       {products.map((p) => <ProductCard product={p} />)}
     </div>
+    <p data-search-empty class="text-stone-500 mt-6" style="display:none">No products match your search.</p>
   </section>
 </Base>

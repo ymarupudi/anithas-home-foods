@@ -1,0 +1,38 @@
+---
+const { placeholder = 'Search...' } = Astro.props;
+---
+<div class="relative w-full sm:w-64">
+  <input
+    type="search"
+    data-product-search
+    placeholder={placeholder}
+    aria-label="Search products"
+    class="w-full pl-9 pr-3 py-2 rounded-md border border-stone-300 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-brand focus:border-brand"
+  />
+  <svg xmlns="http://www.w3.org/2000/svg" class="absolute left-2.5 top-1/2 -translate-y-1/2 w-4 h-4 text-stone-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35M10.5 18a7.5 7.5 0 1 1 0-15 7.5 7.5 0 0 1 0 15z" />
+  </svg>
+</div>
+
+<script>
+  function setupSearch(input: HTMLInputElement) {
+    const grid = input.closest('section')?.querySelector('[data-product-grid]') as HTMLElement | null;
+    if (!grid) return;
+    const cards = Array.from(grid.querySelectorAll<HTMLElement>('.product-card'));
+    const emptyMsg = input.closest('section')?.querySelector('[data-search-empty]') as HTMLElement | null;
+
+    input.addEventListener('input', () => {
+      const q = input.value.trim().toLowerCase();
+      let visible = 0;
+      for (const card of cards) {
+        const name = (card.dataset.productName || '').toLowerCase();
+        const match = !q || name.includes(q);
+        card.style.display = match ? '' : 'none';
+        if (match) visible++;
+      }
+      if (emptyMsg) emptyMsg.style.display = visible === 0 ? '' : 'none';
+    });
+  }
+
+  document.querySelectorAll<HTMLInputElement>('[data-product-search]').forEach(setupSearch);
+</script>
